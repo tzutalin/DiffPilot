@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232326"/>
+      <stop offset="1" stop-color="#141416"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C8B8F2"/>
+      <stop offset="0.55" stop-color="#B4C8F0"/>
+      <stop offset="1" stop-color="#A2DCE6"/>
+    </linearGradient>
+  </defs>
+  <!-- macOS icon grid: 824px rounded square centred on a 1024 canvas -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  <rect x="100.5" y="100.5" width="823" height="823" rx="184.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.07"/>
+  <g transform="translate(512 512) scale(0.58) translate(-625 -615)">
+    <!-- the open page: a rounded square with a gap at the bottom right for the plus -->
+    <path d="M1012 604 V280 A110 110 0 0 0 902 170 H290 A110 110 0 0 0 180 280 V893 A110 110 0 0 0 290 1003 H612"
+          fill="none" stroke="url(#ink)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- lines of text -->
+    <g stroke="#FFFFFF" stroke-width="78" stroke-linecap="round">
+      <path d="M368 378 H784"/>
+      <path d="M368 543 H784"/>
+      <path d="M368 708 H556"/>
+    </g>
+    <!-- plus -->
+    <path d="M957 796 V1100 M806 948 H1110" stroke="#A6DAE6" stroke-width="78" stroke-linecap="round"/>
+  </g>
+</svg>

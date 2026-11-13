@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DiffPilot support: report a bug or ask a question</title>
+<meta name="description" content="Get help with DiffPilot for Mac. Report bugs and request features on GitHub Issues, and find answers to common setup questions.">
+<link rel="canonical" href="https://tzutalin.github.io/DiffPilot/support.html">
+<meta property="og:title" content="DiffPilot support: report a bug or ask a question">
+<meta property="og:description" content="Get help with DiffPilot for Mac. Report bugs and request features on GitHub Issues, and find answers to common setup questions.">
+<meta property="og:image" content="https://tzutalin.github.io/DiffPilot/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<nav class="nav" aria-label="Primary">
+  <a class="brand title-3" href="./"><img src="assets/app-icon.png" alt="" width="24" height="24">DiffPilot</a>
+  <div class="links body-5" id="menu">
+    <a href="./#features">Features</a>
+    <a href="docs.html">Docs</a>
+    <a href="docs.html#git-difftool">Git tools</a>
+    <a href="support.html" aria-current="page">Support</a>
+    <a href="./#faq">FAQ</a>
+  </div>
+  <a class="btn primary sm cta" href="./#download">Get DiffPilot</a>
+  <button class="toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</nav>
+</header>
+
+<main id="main" class="doc">
+<div class="wrap narrow">
+  <article class="prose">
+    <header>
+      <span class="caption-3" style="color:var(--accent)">Support</span>
+      <h1 class="heading-2" style="margin-top:var(--s-100)">Get help with DiffPilot</h1>
+      <p class="body-3 muted" style="margin-top:var(--s-200)">Bug reports, questions and feature requests all go through GitHub Issues, where you can follow the fix and see what others have reported.</p>
+    </header>
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <a class="card link" href="https://github.com/tzutalin/DiffPilot/issues/new?template=bug_report.yml"><span class="i i-lg" style="--src:url(assets/icons/bug.svg)"></span><h2 class="title-2">Report a bug</h2><p class="body-6">Something broke or looks wrong.</p></a>
+      <a class="card link" href="https://github.com/tzutalin/DiffPilot/issues/new?template=feature_request.yml"><span class="i i-lg" style="--src:url(assets/icons/lightbulb.svg)"></span><h2 class="title-2">Request a feature</h2><p class="body-6">Tell us what would help your reviews.</p></a>
+      <a class="card link" href="https://github.com/tzutalin/DiffPilot/issues?q=is%3Aissue"><span class="i i-lg" style="--src:url(assets/icons/github-logo.svg)"></span><h2 class="title-2">Search issues</h2><p class="body-6">Your question may already have an answer.</p></a>
+    </div>
+
+    <h2 id="report" class="heading-4">What to include in a bug report</h2>
+    <ul>
+      <li><strong>DiffPilot version</strong>: run <code>dip --version</code>, or choose DiffPilot → About DiffPilot.</li>
+      <li><strong>macOS version</strong> and whether your Mac has Apple silicon or an Intel processor.</li>
+      <li><strong>How you opened the review</strong>, for example <code>dip --staged</code>, <code>git mergetool</code> or a pull request.</li>
+      <li><strong>Steps to reproduce</strong>, what you expected and what happened.</li>
+      <li><strong>A screenshot</strong> if it's visual. Remove anything private first.</li>
+    </ul>
+    <div class="note body-6"><span class="i" style="--src:url(assets/icons/shield-check.svg)"></span><p>GitHub issues are public. Don't paste source code, tokens or customer data you can't share. If a report needs private details, say so in the issue and we'll find another way.</p></div>
+
+    <h2 id="security" class="heading-4">Security issues</h2>
+    <p>Please don't open a public issue for a security problem. Use <a href="https://github.com/tzutalin/DiffPilot/security/advisories/new">private vulnerability reporting</a> on GitHub instead.</p>
+
+    <h2 id="faq" class="heading-4">Common questions</h2>
+    <details><summary class="title-3">How do I set DiffPilot up as git difftool or mergetool?</summary><div class="a body-6"><p>Follow the <a href="docs.html#git-difftool">git difftool</a> and <a href="docs.html#git-mergetool">git mergetool</a> guides. Each is three <code>git config</code> commands.</p></div></details>
+    <details><summary class="title-3">The <code>dip</code> command isn't found</summary><div class="a body-6"><p>Link it onto your <code>PATH</code> as described in <a href="docs.html#install-cli">Install the command line tool</a>, then open a new terminal window.</p></div></details>
+    <details><summary class="title-3">Pull requests won't load</summary><div class="a body-6"><p>DiffPilot uses the GitHub CLI. Run <code>gh auth status</code> in Terminal and sign in with <code>gh auth login</code> if needed.</p></div></details>
+    <details><summary class="title-3">My coding agent doesn't connect</summary><div class="a body-6"><p>Check the agent runs from Terminal on its own, then pick it again under Settings → Agent. DiffPilot supports Claude Code, Codex, OpenCode and any agent that speaks the Agent Client Protocol.</p></div></details>
+    <details><summary class="title-3">Where are my comments and settings stored?</summary><div class="a body-6"><p>On your Mac only, in <code>~/Library/Application Support/dip</code>. Delete that folder to reset DiffPilot. See the <a href="privacy.html">privacy policy</a>.</p></div></details>
+    <details><summary class="title-3">How do I get a refund?</summary><div class="a body-6"><p>Purchases from the Mac App Store are handled by Apple. Request a refund at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></div></details>
+    <p>More answers are in the <a href="docs.html#troubleshooting">troubleshooting guide</a>.</p>
+  </article>
+</div>
+</main>
+
+<footer>
+  <div class="wrap body-6">
+    <div><a class="brand title-3" href="./"><img src="assets/app-icon.png" alt="" width="24" height="24">DiffPilot</a><p style="margin-top:var(--s-100);max-width:320px">Native Git diff and code review for Mac.</p></div>
+    <div><h2 class="title-4">Product</h2><ul><li><a href="./#features">Features</a></li><li><a href="./#tour">Screenshots</a></li><li><a href="./#download">Download</a></li><li><a href="app-store.html">Press and App Store kit</a></li></ul></div>
+    <div><h2 class="title-4">Docs</h2><ul><li><a href="docs.html#cli">Command line</a></li><li><a href="docs.html#git-difftool">git difftool</a></li><li><a href="docs.html#git-mergetool">git mergetool</a></li></ul></div>
+    <div><h2 class="title-4">Help</h2><ul><li><a href="support.html">Support</a></li><li><a href="https://github.com/tzutalin/DiffPilot/issues/new/choose">Report an issue</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    <p class="legal caption-5">© 2026 DiffPilot. All rights reserved. Apple, Mac and macOS are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

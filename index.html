@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DiffPilot: native Git diff and code review for Mac</title>
+<meta name="description" content="Review local changes, pull requests, images and PDFs in a fast native Mac app. Use it as your git difftool and mergetool, and send review comments to your coding agent in one step.">
+<link rel="canonical" href="https://tzutalin.github.io/DiffPilot/">
+<meta property="og:title" content="DiffPilot: native Git diff and code review for Mac">
+<meta property="og:description" content="Review local changes and pull requests in a native Mac app, then hand the comments to your coding agent.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tzutalin.github.io/DiffPilot/">
+<meta property="og:image" content="https://tzutalin.github.io/DiffPilot/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DiffPilot","operatingSystem":"macOS 11 or later","applicationCategory":"DeveloperApplication","description":"Native Git diff and code review app for Mac with a command line tool, git difftool and mergetool support, and coding agent integration.","url":"https://tzutalin.github.io/DiffPilot/","image":"https://tzutalin.github.io/DiffPilot/assets/og.jpg"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<nav class="nav" aria-label="Primary">
+  <a class="brand title-3" href="./" aria-current="page"><img src="assets/app-icon.png" alt="" width="24" height="24">DiffPilot</a>
+  <div class="links body-5" id="menu">
+    <a href="#features">Features</a>
+    <a href="docs.html">Docs</a>
+    <a href="docs.html#git-difftool">Git tools</a>
+    <a href="support.html">Support</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a class="btn primary sm cta" href="#download">Get DiffPilot</a>
+  <button class="toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</nav>
+</header>
+
+<main id="main">
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="heading-1">Review every change<br class="lg-br"> on your Mac, then<br class="lg-br"> let your agent fix it</h1>
+    <p class="sub body-3">DiffPilot is a native diff and code review app for Git. Open it from the terminal, use it as your difftool and mergetool, comment on any line, and send the comments to Claude Code, Codex or OpenCode in one message.</p>
+    <div class="actions">
+      <a class="btn primary lg" href="#download"><span class="i" style="--src:url(assets/icons/apple-logo.svg)"></span>Get DiffPilot for Mac</a>
+      <a class="btn lg" href="docs.html"><span class="i" style="--src:url(assets/icons/terminal.svg)"></span>Read the CLI guide</a>
+    </div>
+    <ul class="proof caption-1">
+      <li><span class="i i-sm" style="--src:url(assets/icons/check.svg)"></span>Free, no account</li>
+      <li><span class="i i-sm" style="--src:url(assets/icons/check.svg)"></span>Runs on your Mac, no telemetry</li>
+      <li><span class="i i-sm" style="--src:url(assets/icons/check.svg)"></span>Apple silicon and Intel, macOS 11 or later</li>
+    </ul>
+    <div class="frame">
+      <img src="assets/screens/agent-review.jpg" srcset="assets/screens/agent-review-sm.jpg 1200w, assets/screens/agent-review.jpg 2000w" sizes="(min-width:1100px) 1024px, 100vw" width="2000" height="1250" alt="DiffPilot reviewing a Salesforce Apex pull request in split view, with agent drafted comments placed on lines 4 and 16 and the agent panel open on the right" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- Problem to solution -->
+<section aria-labelledby="why-title">
+  <div class="wrap split">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Why DiffPilot</span>
+      <h2 id="why-title" class="heading-2">Code review that stays in your local loop</h2>
+      <p class="body-3">Terminal diffs are hard to read, browser review breaks your flow, and copying comments into an agent chat by hand loses the line numbers. DiffPilot keeps the whole loop in one window.</p>
+    </div>
+    <ul class="compare-list reveal">
+      <li><span class="i x" style="--src:url(assets/icons/x.svg)"></span><span><span class="body-2">Before</span><br><span class="body-6 before">Scrolling <code>git diff</code> output in a terminal with no word highlighting.</span></span></li>
+      <li><span class="i ok" style="--src:url(assets/icons/check.svg)"></span><span><span class="body-2">With DiffPilot</span><br><span class="body-6 before">Split or unified views with word level highlights, syntax colors and a file tree.</span></span></li>
+      <li><span class="i x" style="--src:url(assets/icons/x.svg)"></span><span><span class="body-2">Before</span><br><span class="body-6 before">Pasting review notes into an agent chat and explaining which line each one means.</span></span></li>
+      <li><span class="i ok" style="--src:url(assets/icons/check.svg)"></span><span><span class="body-2">With DiffPilot</span><br><span class="body-6 before">Comments keep their file and line. Queue them and press Send once.</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Features</span>
+      <h2 id="features-title" class="heading-2">Everything you review, in one native window</h2>
+      <p class="body-3">Built in Rust for speed. Local changes, commits, pull requests and binary files all open in the same review view.</p>
+    </div>
+    <div class="grid three">
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-diff.svg)"></span><h3 class="title-1">Readable diffs</h3><p class="body-6">Unified or side by side, with word level highlights, line numbers, wrapping and GitHub style themes.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/terminal.svg)"></span><h3 class="title-1">One command to open</h3><p class="body-6">Run <code>dip</code> in any repository. Pass revisions, paths, a PR number, or pipe a patch in.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-merge.svg)"></span><h3 class="title-1">Difftool and mergetool</h3><p class="body-6">Set DiffPilot as <code>git difftool</code> and <code>git mergetool</code> with four lines of config.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/robot.svg)"></span><h3 class="title-1">Agent in the panel</h3><p class="body-6">Ask about a change, draft a review, or fix every comment with any Agent Client Protocol agent.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-pull-request.svg)"></span><h3 class="title-1">GitHub pull requests</h3><p class="body-6">Browse PRs waiting for you, import their comments, and submit a review without opening a browser.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/file-pdf.svg)"></span><h3 class="title-1">Images and PDFs too</h3><p class="body-6">Compare images by swipe, onion skin or pixel difference. PDF pages show changed words boxed.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Showcase -->
+<section id="tour" aria-labelledby="tour-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Tour</span>
+      <h2 id="tour-title" class="heading-2">See it on a real review</h2>
+      <p class="body-3">Every screenshot is the actual app, rendered at Retina resolution.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Screenshots">
+      <button class="tab" role="tab" id="t-agent" aria-controls="p-agent" aria-selected="true">Agent review</button>
+      <button class="tab" role="tab" id="t-ask" aria-controls="p-ask" aria-selected="false" tabindex="-1">Ask about a change</button>
+      <button class="tab" role="tab" id="t-difftool" aria-controls="p-difftool" aria-selected="false" tabindex="-1">git difftool</button>
+      <button class="tab" role="tab" id="t-merge" aria-controls="p-merge" aria-selected="false" tabindex="-1">git mergetool</button>
+      <button class="tab" role="tab" id="t-prs" aria-controls="p-prs" aria-selected="false" tabindex="-1">Pull requests</button>
+      <button class="tab" role="tab" id="t-image" aria-controls="p-image" aria-selected="false" tabindex="-1">Images</button>
+      <button class="tab" role="tab" id="t-pdf" aria-controls="p-pdf" aria-selected="false" tabindex="-1">PDFs</button>
+      <button class="tab" role="tab" id="t-themes" aria-controls="p-themes" aria-selected="false" tabindex="-1">Themes</button>
+    </div>
+    <div class="panel" role="tabpanel" id="p-agent" aria-labelledby="t-agent">
+      <div class="frame"><a class="zoom" href="assets/screens/agent-review.jpg"><img loading="lazy" src="assets/screens/agent-review-sm.jpg" width="1200" height="750" alt="Agent drafted review comments on a Salesforce DiscountService class"></a></div>
+      <div><h3 class="heading-6">Your reviewer, on the exact line</h3><p class="body-6">Press Draft review with agent. Comments land on the lines they talk about, ready for you to edit, keep or delete.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-ask" aria-labelledby="t-ask" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/ask-agent.jpg"><img loading="lazy" src="assets/screens/ask-agent-sm.jpg" width="1200" height="750" alt="Agent panel explaining the selected lines, listing risks and a recommendation"></a></div>
+      <div><h3 class="heading-6">Ask about any change</h3><p class="body-6">Select lines and choose Ask agent. The answer shows up in the side panel, with risks and a suggested fix.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-difftool" aria-labelledby="t-difftool" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/difftool.jpg"><img loading="lazy" src="assets/screens/difftool-sm.jpg" width="1200" height="750" alt="DiffPilot opened by git difftool, showing two changed Apex classes in split view"></a></div>
+      <div><h3 class="heading-6">git difftool, every file at once</h3><p class="body-6">With <code>--dir-diff</code>, all changed files open in one window with a file tree. Copy a block from one side to the other with the arrow buttons.</p><p class="body-6"><a href="docs.html#git-difftool">Set it up</a></p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-merge" aria-labelledby="t-merge" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/mergetool.jpg"><img loading="lazy" src="assets/screens/mergetool-sm.jpg" width="1200" height="750" alt="Three way merge view with local, base and remote columns for each conflict"></a></div>
+      <div><h3 class="heading-6">Three way merge for conflicts</h3><p class="body-6">Local, base and remote sit side by side for every conflict. Pick a side, combine both, or type the resolution, then Save and exit.</p><p class="body-6"><a href="docs.html#git-mergetool">Set it up</a></p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-prs" aria-labelledby="t-prs" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/pull-requests.jpg"><img loading="lazy" src="assets/screens/pull-requests-sm.jpg" width="1200" height="750" alt="Pull request list grouped by review requested, my PRs and assigned to me"></a></div>
+      <div><h3 class="heading-6">Every PR that needs you</h3><p class="body-6">Review requests, your own PRs and assignments in one list, through the GitHub CLI you already use.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-image" aria-labelledby="t-image" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/image-compare.jpg"><img loading="lazy" src="assets/screens/image-compare-sm.jpg" width="1200" height="750" alt="A changed banner image shown before and after, with the changed area boxed"></a></div>
+      <div><h3 class="heading-6">Images, compared four ways</h3><p class="body-6">Side by side, swipe, onion skin or difference. Changed areas are boxed and the percentage of changed pixels is shown.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-pdf" aria-labelledby="t-pdf" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/pdf-compare.jpg"><img loading="lazy" src="assets/screens/pdf-compare-sm.jpg" width="1200" height="750" alt="An order form PDF compared page by page with changed numbers highlighted"></a></div>
+      <div><h3 class="heading-6">PDFs, page by page</h3><p class="body-6">DiffPilot opens on the first page that changed and boxes the changed words. Switch to Visual for layout changes.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-themes" aria-labelledby="t-themes" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/themes.jpg"><img loading="lazy" src="assets/screens/themes-sm.jpg" width="1200" height="750" alt="Appearance settings with a gallery of light and dark themes"></a></div>
+      <div><h3 class="heading-6">Make it yours</h3><p class="body-6">GitHub light and dark plus a gallery of editor themes, adjustable fonts, custom shortcuts and 15 interface languages.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Tagline reveal -->
+<section class="tagline" aria-label="Summary">
+  <div class="wrap"><p>Review once, keep every note on its line,<br>and send them all to your agent in a single message.</p></div>
+</section>
+
+<!-- CLI quick start -->
+<section id="cli" aria-labelledby="cli-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Command line</span>
+      <h2 id="cli-title" class="heading-2">Open any review from the terminal</h2>
+      <p class="body-3">The <code>dip</code> command starts the app on exactly what you want to look at. <a class="muted" href="docs.html#cli" style="text-decoration:underline;text-underline-offset:3px">Full CLI reference</a></p>
+    </div>
+    <div class="term reveal">
+      <div class="tabs" role="tablist" aria-label="Command examples">
+        <button class="tab" role="tab" id="c-local" aria-controls="cp-local" aria-selected="true"><span class="i i-sm" style="--src:url(assets/icons/git-diff.svg)"></span>Local changes</button>
+        <button class="tab" role="tab" id="c-rev" aria-controls="cp-rev" aria-selected="false" tabindex="-1"><span class="i i-sm" style="--src:url(assets/icons/arrows-left-right.svg)"></span>Branches and commits</button>
+        <button class="tab" role="tab" id="c-files" aria-controls="cp-files" aria-selected="false" tabindex="-1"><span class="i i-sm" style="--src:url(assets/icons/folder-open.svg)"></span>Files and folders</button>
+        <button class="tab" role="tab" id="c-pr" aria-controls="cp-pr" aria-selected="false" tabindex="-1"><span class="i i-sm" style="--src:url(assets/icons/git-pull-request.svg)"></span>Pull requests</button>
+        <button class="tab" role="tab" id="c-git" aria-controls="cp-git" aria-selected="false" tabindex="-1"><span class="i i-sm" style="--src:url(assets/icons/git-merge.svg)"></span>difftool and mergetool</button>
+      </div>
+      <div>
+        <div class="panel" role="tabpanel" id="cp-local" aria-labelledby="c-local">
+          <div class="code"><div class="bar caption-4"><span>Terminal</span><button class="copy" type="button" data-copy="x-local"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+<pre id="x-local"><span class="c"># everything not yet committed</span>
+<span class="p">$ </span>dip
+<span class="c"># only staged, or only unstaged</span>
+<span class="p">$ </span>dip --staged
+<span class="p">$ </span>dip --unstaged
+<span class="c"># limit to some paths</span>
+<span class="p">$ </span>dip src/main.rs README.md</pre></div>
+          <p class="body-6 muted">Run it inside a repository, or point at one with <code>dip -C ~/code/other-repo</code>. The view refreshes as you edit files.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="cp-rev" aria-labelledby="c-rev" hidden>
+          <div class="code"><div class="bar caption-4"><span>Terminal</span><button class="copy" type="button" data-copy="x-rev"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+<pre id="x-rev"><span class="c"># the last commit</span>
+<span class="p">$ </span>dip HEAD~1 HEAD
+<span class="c"># a feature branch against main</span>
+<span class="p">$ </span>dip main..feature/discount-codes
+<span class="p">$ </span>dip --from main --to feature/discount-codes
+<span class="c"># your working tree against the remote branch</span>
+<span class="p">$ </span>dip . origin/dev</pre></div>
+          <p class="body-6 muted">Anything Git accepts as a revision works: tags, SHAs, <code>A..B</code> ranges.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="cp-files" aria-labelledby="c-files" hidden>
+          <div class="code"><div class="bar caption-4"><span>Terminal</span><button class="copy" type="button" data-copy="x-files"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+<pre id="x-files"><span class="c"># two files or two folders, no Git needed</span>
+<span class="p">$ </span>dip --compare old/config.json new/config.json
+<span class="p">$ </span>dip --compare release-1.4/ release-1.5/
+<span class="c"># copy blocks between two files and save</span>
+<span class="p">$ </span>dip --compare-edit left.yaml right.yaml
+<span class="c"># comment on whole files, not just a diff</span>
+<span class="p">$ </span>dip --files
+<span class="c"># any patch from stdin</span>
+<span class="p">$ </span>git diff | dip -</pre></div>
+          <p class="body-6 muted">You can also drop a folder on the Dock icon, or choose DiffPilot from Open With in Finder.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="cp-pr" aria-labelledby="c-pr" hidden>
+          <div class="code"><div class="bar caption-4"><span>Terminal</span><button class="copy" type="button" data-copy="x-pr"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+<pre id="x-pr"><span class="c"># by number, URL or branch (needs the GitHub CLI)</span>
+<span class="p">$ </span>dip --pr 318
+<span class="p">$ </span>dip --pr https://github.com/acme/revenue-cloud/pull/318
+<span class="c"># start a review over, clearing saved comments</span>
+<span class="p">$ </span>dip --pr 318 --clean</pre></div>
+          <p class="body-6 muted">Sign in once with <code>gh auth login</code>. GitHub Enterprise works through <code>GH_HOST</code>.</p>
+        </div>
+        <div class="panel" role="tabpanel" id="cp-git" aria-labelledby="c-git" hidden>
+          <div class="code"><div class="bar caption-4"><span>~/.gitconfig</span><button class="copy" type="button" data-copy="x-git"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+<pre id="x-git">[diff]
+	tool = dip
+[difftool "dip"]
+	cmd = dip --compare "$LOCAL" "$REMOTE"
+[difftool]
+	prompt = false
+[merge]
+	tool = dip
+[mergetool "dip"]
+	cmd = dip --merge "$LOCAL" "$BASE" "$REMOTE" "$MERGED"
+	trustExitCode = true
+[mergetool]
+	prompt = false</pre></div>
+          <p class="body-6 muted">Then run <code>git difftool --dir-diff</code> or <code>git mergetool</code>. <a href="docs.html#git-difftool" style="text-decoration:underline;text-underline-offset:3px">Step by step guide</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">How it works</span>
+      <h2 id="how-title" class="heading-2">From diff to fix in three steps</h2>
+    </div>
+    <ol class="steps three">
+      <li class="card reveal"><h3 class="title-1">Open the change</h3><p class="body-6">Run <code>dip</code>, <code>git difftool</code>, or pick a pull request from the PR list.</p></li>
+      <li class="card reveal"><h3 class="title-1">Comment on lines</h3><p class="body-6">Select lines, write a note, and mark each file reviewed. Comments are saved per review.</p></li>
+      <li class="card reveal"><h3 class="title-1">Fix or submit</h3><p class="body-6">Send the comments to your agent with Fix comments with agent, or submit them to GitHub as a review.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Proof: privacy and trust -->
+<section aria-labelledby="trust-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Your code stays yours</span>
+      <h2 id="trust-title" class="heading-2">Local by design</h2>
+      <p class="body-3">DiffPilot has no server, no account and no analytics. It only talks to tools you install and sign in to yourself.</p>
+    </div>
+    <div class="grid three">
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/lock-key.svg)"></span><h3 class="title-1">No data collection</h3><p class="body-6">Comments, review state and settings live in <code>~/Library/Application Support/dip</code> on your Mac.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/shield-check.svg)"></span><h3 class="title-1">Agents ask first</h3><p class="body-6">File edits and commands from an agent wait for your approval unless you turn that off. Agents are kept out of <code>.git</code>.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/github-logo.svg)"></span><h3 class="title-1">GitHub is optional</h3><p class="body-6">Local review needs only Git. Pull request features use the <code>gh</code> CLI under your own login.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap narrow">
+    <div class="head reveal"><span class="eyebrow caption-3">FAQ</span><h2 id="faq-title" class="heading-2">Questions</h2></div>
+    <details><summary class="title-3">How much does DiffPilot cost?</summary><div class="a body-6"><p>DiffPilot is free. There is no account, subscription or in app purchase.</p></div></details>
+    <details><summary class="title-3">Which Macs are supported?</summary><div class="a body-6"><p>macOS 11 Big Sur or later, on Apple silicon and Intel Macs.</p></div></details>
+    <details><summary class="title-3">How do I get the <code>dip</code> command after installing the app?</summary><div class="a body-6"><p>Link the binary inside the app into your PATH once:</p><p><code>ln -sf /Applications/DiffPilot.app/Contents/MacOS/dip ~/.local/bin/dip</code></p><p>See <a href="docs.html#install-cli" style="text-decoration:underline">Install the command line tool</a> for other options.</p></div></details>
+    <details><summary class="title-3">Can I use it as git difftool and git mergetool?</summary><div class="a body-6"><p>Yes. Add the config shown in the <a href="docs.html#git-difftool" style="text-decoration:underline">Git tools guide</a>. The mergetool writes the merged file and tells Git whether you finished, so <code>trustExitCode</code> works.</p></div></details>
+    <details><summary class="title-3">Do I need GitHub or an AI agent?</summary><div class="a body-6"><p>No. Diffs, comments, the difftool and the mergetool all work with only Git installed. GitHub and agent features turn on when you set them up.</p></div></details>
+    <details><summary class="title-3">Which agents work with it?</summary><div class="a body-6"><p>Any agent that speaks the Agent Client Protocol. Presets are included for Claude Code, Codex and OpenCode, and you can enter a custom command.</p></div></details>
+    <details><summary class="title-3">Does my code leave my Mac?</summary><div class="a body-6"><p>DiffPilot itself sends nothing anywhere. If you use an agent, what it sends to its model provider follows that agent's own settings. GitHub features go through your <code>gh</code> login.</p></div></details>
+    <details><summary class="title-3">Which files can it compare?</summary><div class="a body-6"><p>Any text or source file with syntax highlighting, plus Markdown and Mermaid previews, Jupyter notebooks, images (PNG, JPEG, GIF, WebP, BMP) and PDFs. Other binary files can still be commented on and marked reviewed.</p></div></details>
+    <details><summary class="title-3">Which editors can it open files in?</summary><div class="a body-6"><p>Visual Studio Code or Zed. Pick one during first run setup or later in Settings.</p></div></details>
+    <details><summary class="title-3">Where do I report a bug or ask for a feature?</summary><div class="a body-6"><p>Open an issue on <a href="https://github.com/tzutalin/DiffPilot/issues/new/choose" style="text-decoration:underline">GitHub</a>. The <a href="support.html" style="text-decoration:underline">Support page</a> lists what to include.</p></div></details>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section id="download" class="final" aria-labelledby="dl-title">
+  <div class="wrap reveal">
+    <img src="assets/app-icon.png" alt="DiffPilot app icon" width="96" height="96" style="margin:0 auto var(--s-300)">
+    <h2 id="dl-title" class="heading-2">Get DiffPilot for Mac</h2>
+    <p class="body-3">Free on the Mac App Store. No account, no subscription, nothing to cancel.</p>
+    <div class="actions">
+      <a class="btn primary lg" href="https://apps.apple.com/app/id0000000000"><span class="i" style="--src:url(assets/icons/apple-logo.svg)"></span>Get DiffPilot for Mac</a>
+    </div>
+    <p class="caption-2">Prefer a direct download? See <a href="https://github.com/tzutalin/DiffPilot/releases" style="text-decoration:underline">GitHub releases</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap body-6">
+    <div><a class="brand title-3" href="./"><img src="assets/app-icon.png" alt="" width="24" height="24">DiffPilot</a><p style="margin-top:var(--s-100);max-width:320px">Native Git diff and code review for Mac.</p></div>
+    <div><h2 class="title-4">Product</h2><ul><li><a href="#features">Features</a></li><li><a href="#tour">Screenshots</a></li><li><a href="#download">Download</a></li><li><a href="app-store.html">Press and App Store kit</a></li></ul></div>
+    <div><h2 class="title-4">Docs</h2><ul><li><a href="docs.html#cli">Command line</a></li><li><a href="docs.html#git-difftool">git difftool</a></li><li><a href="docs.html#git-mergetool">git mergetool</a></li></ul></div>
+    <div><h2 class="title-4">Help</h2><ul><li><a href="support.html">Support</a></li><li><a href="https://github.com/tzutalin/DiffPilot/issues/new/choose">Report an issue</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    <p class="legal caption-5">© 2026 DiffPilot. All rights reserved. Apple, Mac and macOS are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+<dialog class="lb" aria-label="Screenshot"><img alt=""><button class="btn sm" type="button">Close</button></dialog>
+<script src="main.js"></script>
+</body>
+</html>

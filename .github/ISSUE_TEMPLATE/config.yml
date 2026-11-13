@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://tzutalin.github.io/DiffPilot/docs.html
+    about: Setup, the dip command, git difftool and git mergetool.
+  - name: Support and FAQ
+    url: https://tzutalin.github.io/DiffPilot/support.html
+    about: Answers to common questions.
+  - name: Report a security problem
+    url: https://github.com/tzutalin/DiffPilot/security/advisories/new
+    about: Please report security issues privately.

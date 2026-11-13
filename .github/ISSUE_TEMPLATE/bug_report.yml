@@ -1,0 +1,75 @@
+name: Bug report
+description: Something in DiffPilot doesn't work or looks wrong.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Issues are public, so please leave out private code, tokens and customer data.
+        For security problems, use [private vulnerability reporting](https://github.com/tzutalin/DiffPilot/security/advisories/new) instead.
+  - type: input
+    id: version
+    attributes:
+      label: DiffPilot version
+      description: Run `dip --version`, or open DiffPilot → About DiffPilot.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac
+      placeholder: "macOS 15.2, Apple silicon"
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Where did you get DiffPilot?
+      options:
+        - Mac App Store
+        - GitHub releases
+        - Built from source
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Local diff review
+        - GitHub pull requests
+        - Coding agent
+        - git difftool / --compare
+        - git mergetool / --merge
+        - Image or PDF compare
+        - Command line (dip)
+        - Settings, themes or languages
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: How did you open the review?
+      placeholder: "dip --staged, git mergetool, dip --pr 318 ..."
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or logs
+      description: Drag screenshots here. Paste terminal output if `dip` printed an error.
