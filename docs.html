@@ -37,6 +37,7 @@
 <div class="wrap doc-grid">
   <aside class="toc body-6" aria-label="On this page">
     <a href="#start">Get started</a>
+    <a href="#homebrew">Install with Homebrew</a>
     <a href="#install-cli">Install the CLI</a>
     <a href="#cli">Command line</a>
     <a href="#local">Local changes</a>
@@ -61,14 +62,25 @@
 
     <h2 id="start" class="heading-4">Get started</h2>
     <ol>
-      <li>Install DiffPilot and move it to <code>/Applications</code>.</li>
+      <li>Install DiffPilot from the <a href="https://apps.apple.com/app/id6834689259">Mac App Store</a>, with Homebrew (below), or from the <a href="https://github.com/tzutalin/DiffPilot/releases/latest">DMG</a> by dragging it to <code>/Applications</code>.</li>
       <li>Open it once. First run setup asks for your editor (VS Code or Zed), whether to turn on GitHub, which coding agent to use, and your language. You can skip any step and change it later in <strong>Settings</strong>.</li>
       <li>Open a repository with <strong>File → Open Folder</strong>, drop a folder on the Dock icon, or use the <code>dip</code> command below.</li>
     </ol>
     <p><strong>Requirements:</strong> macOS 11 or later and Git (included with the Xcode Command Line Tools: <code>xcode-select --install</code>). Optional: the <a href="https://cli.github.com/">GitHub CLI</a> for pull requests, and Claude Code, Codex or OpenCode for agent features.</p>
 
+    <h2 id="homebrew" class="heading-4">Install with Homebrew</h2>
+    <p>One command installs the signed, notarized app into <code>/Applications</code> and puts <code>dip</code> on your <code>PATH</code>, so you can skip the next section. Recent Homebrew versions only load casks from third-party taps you trust, hence the first line:</p>
+    <div class="code"><div class="bar caption-4"><span>Terminal</span><button class="copy" type="button" data-copy="d-brew"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+<pre id="d-brew"><span class="p">$ </span>brew trust --cask tzutalin/tap/diffpilot
+<span class="p">$ </span>brew install --cask tzutalin/tap/diffpilot
+<span class="c"># later</span>
+<span class="p">$ </span>brew upgrade --cask diffpilot
+<span class="c"># remove the app (add --zap to also delete settings)</span>
+<span class="p">$ </span>brew uninstall --cask diffpilot</pre></div>
+    <p>The Homebrew build is the same as the direct download, outside the App Store sandbox, so Git, pull requests and agents work with your own <code>git</code>, <code>gh</code> and logins.</p>
+
     <h2 id="install-cli" class="heading-4">Install the command line tool</h2>
-    <p>The <code>dip</code> command is the app's own binary, so it always matches the version you have installed. Link it into a folder on your <code>PATH</code> once:</p>
+    <p>Installed from the App Store or the DMG? The <code>dip</code> command is the app's own binary, so it always matches the version you have installed. Link it into a folder on your <code>PATH</code> once:</p>
     <div class="code"><div class="bar caption-4"><span>Terminal</span><button class="copy" type="button" data-copy="d-install"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
 <pre id="d-install"><span class="c"># a folder you own, no password needed</span>
 <span class="p">$ </span>mkdir -p ~/.local/bin
