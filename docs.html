@@ -66,7 +66,7 @@
       <li>Open it once. First run setup asks for your editor (VS Code or Zed), whether to turn on GitHub, which coding agent to use, and your language. You can skip any step and change it later in <strong>Settings</strong>.</li>
       <li>Open a repository with <strong>File → Open Folder</strong>, drop a folder on the Dock icon, or use the <code>dip</code> command below.</li>
     </ol>
-    <p><strong>Requirements:</strong> macOS 11 or later and Git (included with the Xcode Command Line Tools: <code>xcode-select --install</code>). Optional: the <a href="https://cli.github.com/">GitHub CLI</a> for pull requests, and Claude Code, Codex or OpenCode for agent features.</p>
+    <p><strong>Requirements:</strong> macOS 11 or later and Git (included with the Xcode Command Line Tools: <code>xcode-select --install</code>). Optional: the <a href="https://cli.github.com/">GitHub CLI</a> for pull requests, and a coding agent such as Claude Code, Codex or Gemini CLI for agent features.</p>
 
     <h2 id="homebrew" class="heading-4">Install with Homebrew</h2>
     <p>One command installs the signed, notarized app into <code>/Applications</code> and puts <code>dip</code> on your <code>PATH</code>, so you can skip the next section. Recent Homebrew versions only load casks from third-party taps you trust, hence the first line:</p>
@@ -198,7 +198,7 @@ CONFLICT (content): Merge conflict in force-app/main/default/classes/DiscountSer
     <figure><a class="zoom" href="assets/screens/conflict.jpg"><img loading="lazy" src="assets/screens/conflict-sm.jpg" width="1200" height="750" alt="A conflicted Apex class in the review view, with a Resolve with OpenCode button above the diff"></a><figcaption class="caption-2 muted">A conflicted file during a merge, with the agent option above the diff.</figcaption></figure>
 
     <h2 id="agents" class="heading-4">Coding agents</h2>
-    <p>DiffPilot talks to agents over the Agent Client Protocol. Pick Claude Code, Codex or OpenCode in setup, or enter any ACP command under <strong>Settings → Agent</strong>.</p>
+    <p>DiffPilot talks to agents over the Agent Client Protocol. Pick one of 29 presets in setup, including Claude Code, OpenAI Codex, Gemini CLI, Cursor, GitHub Copilot CLI, OpenCode and Kiro, or enter any ACP command with its own environment variables under <strong>Settings → Agent</strong>. If the agent needs signing in, DiffPilot shows the command to run.</p>
     <ul>
       <li><strong>Draft review with agent</strong> asks the agent to review the diff and places its comments on the right lines.</li>
       <li><strong>Ask agent</strong> on selected lines explains the change in the side panel.</li>

@@ -108,10 +108,18 @@ section{padding:var(--s-800) 0}
 .btn.lg{padding:var(--s-100) var(--s-200)}
 
 /* hero (B5) */
-.hero{padding-top:144px;padding-bottom:var(--s-700);text-align:center}
+.hero{padding-top:calc(var(--s-900) + var(--s-600));padding-bottom:var(--s-700);text-align:center}
 .hero h1{max-width:680px;margin:0 auto var(--s-300);background:linear-gradient(90deg,#FFFFFF,#9B9B9B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .sub{max-width:680px;margin:0 auto var(--s-400);color:var(--muted)}
-.hero .actions{display:flex;gap:var(--s-100);justify-content:center;flex-wrap:wrap;margin-bottom:var(--s-300)}
+.hero .actions{display:flex;gap:var(--s-100);justify-content:center;flex-wrap:wrap;margin-bottom:var(--s-200)}
+.hero-alt{margin-bottom:var(--s-300)}
+.hero-alt a{color:var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);transition:text-decoration-color .3s var(--ease)}
+.hero-alt a:hover{text-decoration-color:var(--text)}
+.agents{display:flex;flex-wrap:wrap;gap:var(--s-75);margin-top:var(--s-300)}
+.agents li{list-style:none;display:inline-flex;align-items:center;gap:var(--s-75);padding:var(--s-50) var(--s-100);border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text)}
+.agents .i{width:16px;height:16px}
+.agents .more{color:var(--muted);background:transparent}
+#agents .frame{margin-top:0}
 .proof{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s-75) var(--s-300);color:var(--muted)}
 .proof li{list-style:none;display:inline-flex;align-items:center;gap:var(--s-75)}
 .proof .i{color:var(--add)}
@@ -186,7 +194,7 @@ ol.steps>li{counter-increment:s}
 ol.steps>li::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);font-weight:600;margin-bottom:var(--s-200)}
 
 /* docs pages */
-.doc{padding-top:144px}
+.doc{padding-top:calc(var(--s-900) + var(--s-600))}
 .doc-grid{display:grid;gap:var(--s-600)}
 .doc-grid>*{min-width:0}
 .prose :not(pre)>code{overflow-wrap:anywhere}

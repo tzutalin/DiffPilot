@@ -29,7 +29,7 @@ GitHub → Settings → Pages → Deploy from a branch → `mainline` / root. Th
 
 ## Before release
 
-- Replace the placeholder App Store link `https://apps.apple.com/app/id0000000000` in `index.html` with the real app ID.
+- The App Store links use the real app ID `6834689259`. After Apple approves the app, remove the "in App Store review" line in the download section of `index.html`.
 - Confirm the price shown on the site matches App Store Connect.
 
 ## Assets

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DiffPilot: native Git diff and code review for Mac</title>
-<meta name="description" content="Review local changes, pull requests, images and PDFs in a fast native Mac app. Use it as your git difftool and mergetool, and send review comments to your coding agent in one step.">
+<meta name="description" content="Review local changes, pull requests, images and PDFs in a fast native Mac app. Use it as your git difftool and mergetool, and send review comments to Claude Code, Codex, Gemini CLI or another ACP agent in one step.">
 <link rel="canonical" href="https://tzutalin.github.io/DiffPilot/">
 <meta property="og:title" content="DiffPilot: native Git diff and code review for Mac">
 <meta property="og:description" content="Review local changes and pull requests in a native Mac app, then hand the comments to your coding agent.">
@@ -33,7 +33,7 @@
     <a href="support.html">Support</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a class="btn primary sm cta" href="#download">Get DiffPilot</a>
+  <a class="btn primary sm cta" href="#download">Get DiffPilot free</a>
   <button class="toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
 </nav>
 </header>
@@ -43,11 +43,11 @@
 <section class="hero">
   <div class="wrap">
     <h1 class="heading-1">Review every change<br class="lg-br"> on your Mac, then<br class="lg-br"> let your agent fix it</h1>
-    <p class="sub body-3">DiffPilot is a native diff and code review app for Git. Open it from the terminal, use it as your difftool and mergetool, comment on any line, and send the comments to Claude Code, Codex or OpenCode in one message.</p>
+    <p class="sub body-3">DiffPilot is a native diff and code review app for Git. Open it from the terminal, use it as your difftool and mergetool, comment on any line, and send the comments to Claude Code, Codex, Gemini CLI or any of 29 supported coding agents in one message.</p>
     <div class="actions">
-      <a class="btn primary lg" href="#download"><span class="i" style="--src:url(assets/icons/apple-logo.svg)"></span>Get DiffPilot for Mac</a>
-      <a class="btn lg" href="docs.html"><span class="i" style="--src:url(assets/icons/terminal.svg)"></span>Read the CLI guide</a>
+      <a class="btn primary lg" href="#download"><span class="i" style="--src:url(assets/icons/apple-logo.svg)"></span>Get DiffPilot free for Mac</a>
     </div>
+    <p class="caption-2 muted hero-alt">Prefer the terminal? <a href="docs.html#cli">Read the CLI guide</a></p>
     <ul class="proof caption-1">
       <li><span class="i i-sm" style="--src:url(assets/icons/check.svg)"></span>Free, no account</li>
       <li><span class="i i-sm" style="--src:url(assets/icons/check.svg)"></span>Runs on your Mac, no telemetry</li>
@@ -92,6 +92,37 @@
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-pull-request.svg)"></span><h3 class="title-1">GitHub pull requests</h3><p class="body-6">Browse PRs waiting for you, import their comments, and submit a review without opening a browser.</p></article>
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/file-pdf.svg)"></span><h3 class="title-1">Images and PDFs too</h3><p class="body-6">Compare images by swipe, onion skin or pixel difference. PDF pages show changed words boxed.</p></article>
     </div>
+  </div>
+</section>
+
+<!-- Agents -->
+<section id="agents" aria-labelledby="agents-title">
+  <div class="wrap split">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Agents</span>
+      <h2 id="agents-title" class="heading-2">Bring the agent you already use</h2>
+      <p class="body-3">DiffPilot speaks the Agent Client Protocol, so it works with 29 coding agents out of the box. Pick one in Settings, sign in with its own CLI, and DiffPilot shows how if a step is missing. Any other ACP agent works with a custom command.</p>
+      <ul class="agents caption-1">
+        <li><span class="i" style="--src:url(assets/agents/claude-acp.svg)"></span>Claude Code</li>
+        <li><span class="i" style="--src:url(assets/agents/codex-acp.svg)"></span>OpenAI Codex</li>
+        <li><span class="i" style="--src:url(assets/agents/gemini.svg)"></span>Gemini CLI</li>
+        <li><span class="i" style="--src:url(assets/agents/cursor.svg)"></span>Cursor</li>
+        <li><span class="i" style="--src:url(assets/agents/github-copilot-cli.svg)"></span>GitHub Copilot CLI</li>
+        <li><span class="i" style="--src:url(assets/agents/opencode.svg)"></span>OpenCode</li>
+        <li><span class="i" style="--src:url(assets/agents/kiro.svg)"></span>Kiro</li>
+        <li><span class="i" style="--src:url(assets/agents/cline.svg)"></span>Cline</li>
+        <li><span class="i" style="--src:url(assets/agents/goose.svg)"></span>Goose</li>
+        <li><span class="i" style="--src:url(assets/agents/junie.svg)"></span>Junie</li>
+        <li><span class="i" style="--src:url(assets/agents/qwen-code.svg)"></span>Qwen Code</li>
+        <li><span class="i" style="--src:url(assets/agents/amp-acp.svg)"></span>Amp</li>
+        <li><span class="i" style="--src:url(assets/agents/devin.svg)"></span>Devin</li>
+        <li><span class="i" style="--src:url(assets/agents/factory-droid.svg)"></span>Factory Droid</li>
+        <li><span class="i" style="--src:url(assets/agents/kimi-code.svg)"></span>Kimi CLI</li>
+        <li><span class="i" style="--src:url(assets/agents/mistral-vibe.svg)"></span>Mistral Vibe</li>
+        <li class="more">and 13 more</li>
+      </ul>
+    </div>
+    <div class="frame reveal"><a class="zoom" href="assets/screens/agents.jpg"><img loading="lazy" src="assets/screens/agents-sm.jpg" width="1200" height="750" alt="DiffPilot agent settings with a list of coding agents and their logos: OpenCode, Claude Code, OpenAI Codex, Kiro, Cursor Agent, Gemini CLI and more"></a></div>
   </div>
 </section>
 
@@ -276,7 +307,7 @@
     <details><summary class="title-3">How do I get the <code>dip</code> command after installing the app?</summary><div class="a body-6"><p>Link the binary inside the app into your PATH once:</p><p><code>ln -sf /Applications/DiffPilot.app/Contents/MacOS/dip ~/.local/bin/dip</code></p><p>See <a href="docs.html#install-cli" style="text-decoration:underline">Install the command line tool</a> for other options.</p></div></details>
     <details><summary class="title-3">Can I use it as git difftool and git mergetool?</summary><div class="a body-6"><p>Yes. Add the config shown in the <a href="docs.html#git-difftool" style="text-decoration:underline">Git tools guide</a>. The mergetool writes the merged file and tells Git whether you finished, so <code>trustExitCode</code> works.</p></div></details>
     <details><summary class="title-3">Do I need GitHub or an AI agent?</summary><div class="a body-6"><p>No. Diffs, comments, the difftool and the mergetool all work with only Git installed. GitHub and agent features turn on when you set them up.</p></div></details>
-    <details><summary class="title-3">Which agents work with it?</summary><div class="a body-6"><p>Any agent that speaks the Agent Client Protocol. Presets are included for Claude Code, Codex and OpenCode, and you can enter a custom command.</p></div></details>
+    <details><summary class="title-3">Which agents work with it?</summary><div class="a body-6"><p>Any agent that speaks the Agent Client Protocol. Presets are included for 29 agents, including Claude Code, OpenAI Codex, Gemini CLI, Cursor, GitHub Copilot CLI, OpenCode, Kiro, Cline, Goose and Junie. Any other ACP agent works with a custom command and its own environment variables.</p></div></details>
     <details><summary class="title-3">Does my code leave my Mac?</summary><div class="a body-6"><p>DiffPilot itself sends nothing anywhere. If you use an agent, what it sends to its model provider follows that agent's own settings. GitHub features go through your <code>gh</code> login.</p></div></details>
     <details><summary class="title-3">Which files can it compare?</summary><div class="a body-6"><p>Any text or source file with syntax highlighting, plus Markdown and Mermaid previews, Jupyter notebooks, images (PNG, JPEG, GIF, WebP, BMP) and PDFs. Other binary files can still be commented on and marked reviewed.</p></div></details>
     <details><summary class="title-3">Which editors can it open files in?</summary><div class="a body-6"><p>Visual Studio Code or Zed. Pick one during first run setup or later in Settings.</p></div></details>
@@ -290,10 +321,11 @@
     <img src="assets/app-icon.png" alt="DiffPilot app icon" width="96" height="96" style="margin:0 auto var(--s-300)">
     <h2 id="dl-title" class="heading-2">Get DiffPilot for Mac</h2>
     <p class="body-3">Free on the Mac App Store. No account, no subscription, nothing to cancel.</p>
+    <p class="caption-2 muted">DiffPilot is in App Store review now. The button starts working as soon as Apple approves it.</p>
     <div class="actions">
-      <a class="btn primary lg" href="https://apps.apple.com/app/id6834689259"><span class="i" style="--src:url(assets/icons/apple-logo.svg)"></span>Get DiffPilot for Mac</a>
+      <a class="btn primary lg" href="https://apps.apple.com/app/id6834689259"><span class="i" style="--src:url(assets/icons/apple-logo.svg)"></span>Get DiffPilot free for Mac</a>
     </div>
-    <div class="code" style="max-width:560px;margin:var(--s-400) auto 0;text-align:left"><div class="bar caption-4"><span>Or install with Homebrew</span><button class="copy" type="button" data-copy="brew-install"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
+    <div class="code brew" style="max-width:560px;margin:var(--s-400) auto 0;text-align:left"><div class="bar caption-4"><span>Or install with Homebrew</span><button class="copy" type="button" data-copy="brew-install"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></div>
 <pre id="brew-install"><span class="p">$ </span>brew trust --cask tzutalin/tap/diffpilot
 <span class="p">$ </span>brew install --cask tzutalin/tap/diffpilot</pre></div>
     <p class="caption-2">Installs the signed, notarized app and the <code>dip</code> command. Update with <code>brew upgrade --cask diffpilot</code>. Prefer a direct download? Get the DMG from <a href="https://github.com/tzutalin/DiffPilot/releases/latest" style="text-decoration:underline">GitHub releases</a>.</p>
