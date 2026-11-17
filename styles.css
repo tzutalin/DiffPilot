@@ -159,7 +159,7 @@ section{padding:var(--s-800) 0}
 
 /* tagline reveal (B11) */
 .tagline{padding:var(--s-900) 0}
-.tagline p{max-width:820px;font-size:36px;line-height:40px;font-weight:600}
+.tagline p{max-width:1000px;font-size:36px;line-height:40px;font-weight:600}
 @media(min-width:768px){.tagline p{font-size:48px;line-height:48px}}
 .tagline .w{color:var(--dim);transition:color .6s var(--ease)}
 .tagline .w.on{color:var(--text)}
@@ -222,6 +222,19 @@ td{color:#D0D0D0}
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line)}
 .table-wrap table th,.table-wrap table td{border-width:0 0 1px 0}
 .table-wrap table tr:last-child td{border-bottom:0}
+
+/* story, featured agents, comparison */
+.story{display:grid;gap:var(--s-200);padding:var(--s-400);border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.story p.body-3{color:#D0D0D0}
+.featured-agents{display:grid;gap:var(--s-75);margin-top:var(--s-300)}
+.featured-agents .card{display:grid;grid-template-columns:24px 120px 1fr;align-items:center;gap:var(--s-100);padding:var(--s-100) var(--s-200)}
+.featured-agents .card .i-lg{margin:0}
+.featured-agents p{color:var(--muted)}
+.featured-agents p br{display:none}
+@media (max-width:640px){.featured-agents .card{grid-template-columns:24px 1fr}.featured-agents p{grid-column:1/-1}.featured-agents p br{display:inline}}
+table.cmp{min-width:960px}
+table.cmp th[scope="row"]{background:transparent;white-space:nowrap}
+table.cmp tr.us th,table.cmp tr.us td{background:var(--surface-2);color:var(--text)}
 
 /* App Store kit fields */
 .field{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}

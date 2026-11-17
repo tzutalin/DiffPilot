@@ -29,6 +29,7 @@
   <div class="links body-5" id="menu">
     <a href="#features">Features</a>
     <a href="docs.html">Docs</a>
+    <a href="#compare">Compare</a>
     <a href="docs.html#git-difftool">Git tools</a>
     <a href="support.html">Support</a>
     <a href="#faq">FAQ</a>
@@ -76,6 +77,21 @@
   </div>
 </section>
 
+<!-- Why I built this -->
+<section id="story" aria-labelledby="story-title">
+  <div class="wrap narrow">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Why I built this</span>
+      <h2 id="story-title" class="heading-2">A faster review loop for local work</h2>
+    </div>
+    <div class="story reveal">
+      <p class="body-3">I traditionally used <code>git diff</code>, P4Merge, or GitHub's pull request review UI. They are useful tools, but they can be slow or interrupt the local development workflow. They also do not provide a direct way to turn review feedback into a structured prompt for an AI coding agent, or to launch an agent to address a change.</p>
+      <p class="body-3">I built DiffPilot in Rust to provide a fast native review experience for local changes and pull requests. It keeps the familiar GitHub style review workflow while adding copyable AI prompts and agent integration, such as OpenCode, for resolving merge conflicts from the application.</p>
+      <p class="caption-2 muted">TzuTa Lin, creator of DiffPilot</p>
+    </div>
+  </div>
+</section>
+
 <!-- Benefits -->
 <section id="features" aria-labelledby="features-title">
   <div class="wrap">
@@ -87,7 +103,7 @@
     <div class="grid three">
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-diff.svg)"></span><h3 class="title-1">Readable diffs</h3><p class="body-6">Unified or side by side, with word level highlights, line numbers, wrapping and GitHub style themes.</p></article>
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/terminal.svg)"></span><h3 class="title-1">One command to open</h3><p class="body-6">Run <code>dip</code> in any repository. Pass revisions, paths, a PR number, or pipe a patch in.</p></article>
-      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-merge.svg)"></span><h3 class="title-1">Difftool and mergetool</h3><p class="body-6">Set DiffPilot as <code>git difftool</code> and <code>git mergetool</code> with four lines of config.</p></article>
+      <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-merge.svg)"></span><h3 class="title-1">Difftool and mergetool</h3><p class="body-6">Set DiffPilot as <code>git difftool</code> and <code>git mergetool</code> with a few lines of config.</p></article>
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/robot.svg)"></span><h3 class="title-1">Agent in the panel</h3><p class="body-6">Ask about a change, draft a review, or fix every comment with any Agent Client Protocol agent.</p></article>
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/git-pull-request.svg)"></span><h3 class="title-1">GitHub pull requests</h3><p class="body-6">Browse PRs waiting for you, import their comments, and submit a review without opening a browser.</p></article>
       <article class="card reveal"><span class="i i-lg" style="--src:url(assets/icons/file-pdf.svg)"></span><h3 class="title-1">Images and PDFs too</h3><p class="body-6">Compare images by swipe, onion skin or pixel difference. PDF pages show changed words boxed.</p></article>
@@ -102,6 +118,12 @@
       <span class="eyebrow caption-3">Agents</span>
       <h2 id="agents-title" class="heading-2">Bring the agent you already use</h2>
       <p class="body-3">DiffPilot speaks the Agent Client Protocol, so it works with 29 coding agents out of the box. Pick one in Settings, sign in with its own CLI, and DiffPilot shows how if a step is missing. Any other ACP agent works with a custom command.</p>
+      <div class="featured-agents">
+        <div class="card"><span class="i i-lg" style="--src:url(assets/agents/opencode.svg)"></span><h3 class="title-2">OpenCode</h3><p class="caption-2"><code>npm i -g opencode-ai</code><br>then <code>opencode auth login</code></p></div>
+        <div class="card"><span class="i i-lg" style="--src:url(assets/agents/claude-acp.svg)"></span><h3 class="title-2">Claude Code</h3><p class="caption-2"><code>npm i -g @anthropic-ai/claude-code</code><br>then run <code>claude</code> and <code>/login</code></p></div>
+        <div class="card"><span class="i i-lg" style="--src:url(assets/agents/codex-acp.svg)"></span><h3 class="title-2">OpenAI Codex</h3><p class="caption-2"><code>npm i -g @openai/codex</code><br>then <code>codex login</code></p></div>
+      </div>
+      <p class="caption-2 muted" style="margin-top:var(--s-200)">Install and sign in once in your terminal, then pick the agent in Settings. DiffPilot starts it for you over the Agent Client Protocol. <a href="docs.html#agents" style="text-decoration:underline;text-underline-offset:3px">Agent setup guide</a></p>
       <ul class="agents caption-1">
         <li><span class="i" style="--src:url(assets/agents/claude-acp.svg)"></span>Claude Code</li>
         <li><span class="i" style="--src:url(assets/agents/codex-acp.svg)"></span>OpenAI Codex</li>
@@ -139,6 +161,7 @@
       <button class="tab" role="tab" id="t-ask" aria-controls="p-ask" aria-selected="false" tabindex="-1">Ask about a change</button>
       <button class="tab" role="tab" id="t-difftool" aria-controls="p-difftool" aria-selected="false" tabindex="-1">git difftool</button>
       <button class="tab" role="tab" id="t-merge" aria-controls="p-merge" aria-selected="false" tabindex="-1">git mergetool</button>
+      <button class="tab" role="tab" id="t-submit" aria-controls="p-submit" aria-selected="false" tabindex="-1">Submit a review</button>
       <button class="tab" role="tab" id="t-prs" aria-controls="p-prs" aria-selected="false" tabindex="-1">Pull requests</button>
       <button class="tab" role="tab" id="t-image" aria-controls="p-image" aria-selected="false" tabindex="-1">Images</button>
       <button class="tab" role="tab" id="t-pdf" aria-controls="p-pdf" aria-selected="false" tabindex="-1">PDFs</button>
@@ -159,6 +182,10 @@
     <div class="panel" role="tabpanel" id="p-merge" aria-labelledby="t-merge" hidden>
       <div class="frame"><a class="zoom" href="assets/screens/mergetool.jpg"><img loading="lazy" src="assets/screens/mergetool-sm.jpg" width="1200" height="750" alt="Three way merge view with local, base and remote columns for each conflict"></a></div>
       <div><h3 class="heading-6">Three way merge for conflicts</h3><p class="body-6">Local, base and remote sit side by side for every conflict. Pick a side, combine both, or type the resolution, then Save and exit.</p><p class="body-6"><a href="docs.html#git-mergetool">Set it up</a></p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-submit" aria-labelledby="t-submit" hidden>
+      <div class="frame"><a class="zoom" href="assets/screens/submit-review.jpg"><img loading="lazy" src="assets/screens/submit-review-sm.jpg" width="1200" height="750" alt="Submit review dialog with Comment, Approve and Request changes options for a GitHub pull request"></a></div>
+      <div><h3 class="heading-6">Post the review to GitHub</h3><p class="body-6">Your line comments go up as one GitHub review. Choose Comment, Approve or Request changes, without opening a browser.</p></div>
     </div>
     <div class="panel" role="tabpanel" id="p-prs" aria-labelledby="t-prs" hidden>
       <div class="frame"><a class="zoom" href="assets/screens/pull-requests.jpg"><img loading="lazy" src="assets/screens/pull-requests-sm.jpg" width="1200" height="750" alt="Pull request list grouped by review requested, my PRs and assigned to me"></a></div>
@@ -181,7 +208,34 @@
 
 <!-- Tagline reveal -->
 <section class="tagline" aria-label="Summary">
-  <div class="wrap"><p>Review once, keep every note on its line,<br>and send them all to your agent in a single message.</p></div>
+  <div class="wrap"><p>Review once, keep every note on its line,<br>and send them all to your agent<br>in a single message.</p></div>
+</section>
+
+<!-- Comparison -->
+<section id="compare" aria-labelledby="compare-title">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow caption-3">Compare</span>
+      <h2 id="compare-title" class="heading-2">How DiffPilot fits next to the tools you know</h2>
+      <p class="body-3">Classic diff tools are great at showing changes. DiffPilot adds the review itself: comments on lines, GitHub reviews, and a coding agent that can act on them.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th scope="col">Tool</th><th scope="col">Runs as</th><th scope="col">git difftool and mergetool</th><th scope="col">Three way merge</th><th scope="col">Beyond text</th><th scope="col">Line comments and PR review</th><th scope="col">Hands review to a coding agent</th><th scope="col">Price</th></tr></thead>
+        <tbody>
+          <tr class="us"><th scope="row">DiffPilot</th><td>Native Mac app in Rust</td><td>Yes</td><td>Yes</td><td>Folders, images, PDFs</td><td>Yes, local and GitHub</td><td>Yes, 29 ACP agents</td><td>Free</td></tr>
+          <tr><th scope="row">git diff</th><td>Terminal</td><td>Is Git itself</td><td>Conflict markers in the file</td><td>Text</td><td>—</td><td>—</td><td>Free</td></tr>
+          <tr><th scope="row">P4Merge</th><td>Desktop app</td><td>Yes, built into Git</td><td>Yes</td><td>Images</td><td>—</td><td>—</td><td>Free</td></tr>
+          <tr><th scope="row">Beyond Compare 5</th><td>Desktop app for Windows, Mac, Linux</td><td>Yes, built into Git</td><td>Pro edition</td><td>Folders, images, PDFs as text</td><td>—</td><td>—</td><td>$35 Standard, $70 Pro, one time</td></tr>
+          <tr><th scope="row">Kaleidoscope</th><td>Mac app</td><td>Yes, with <code>ksdiff</code></td><td>Yes</td><td>Folders, images</td><td>—</td><td>—</td><td>From $8 per month</td></tr>
+          <tr><th scope="row">Meld</th><td>Linux and Windows app, Mac builds unofficial</td><td>Yes, built into Git</td><td>Yes</td><td>Folders</td><td>—</td><td>—</td><td>Free</td></tr>
+          <tr><th scope="row">VS Code</th><td>Editor</td><td>Yes, built into Git</td><td>Yes, merge editor</td><td>—</td><td>PR review with the GitHub extension</td><td>Copilot, separate setup</td><td>Free</td></tr>
+          <tr><th scope="row">GitHub PR page</th><td>Browser</td><td>—</td><td>—</td><td>Images</td><td>Yes, on GitHub only</td><td>Copilot on GitHub</td><td>Included with GitHub</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption-5 muted" style="margin-top:var(--s-200)">Checked November 2026 against each vendor's own site and the <a href="https://git-scm.com/docs/git-difftool" style="text-decoration:underline">Git difftool docs</a>. A dash means we could not find the feature listed. Spot something out of date? <a href="https://github.com/tzutalin/DiffPilot/issues/new/choose" style="text-decoration:underline">Tell us</a>.</p>
+  </div>
 </section>
 
 <!-- CLI quick start -->
@@ -303,6 +357,7 @@
   <div class="wrap narrow">
     <div class="head reveal"><span class="eyebrow caption-3">FAQ</span><h2 id="faq-title" class="heading-2">Questions</h2></div>
     <details><summary class="title-3">How much does DiffPilot cost?</summary><div class="a body-6"><p>DiffPilot is free. There is no account, subscription or in app purchase.</p></div></details>
+    <details><summary class="title-3">App Store, Homebrew or DMG: which should I pick?</summary><div class="a body-6"><p>All three are the same app, signed by the same developer. Mac App Store apps run in Apple's App Sandbox, which limits starting your own <code>git</code>, <code>gh</code> and agent tools. If you review Git repositories every day, install with Homebrew or the DMG, which run your tools with your own logins.</p></div></details>
     <details><summary class="title-3">Which Macs are supported?</summary><div class="a body-6"><p>macOS 11 Big Sur or later, on Apple silicon and Intel Macs.</p></div></details>
     <details><summary class="title-3">How do I get the <code>dip</code> command after installing the app?</summary><div class="a body-6"><p>Link the binary inside the app into your PATH once:</p><p><code>ln -sf /Applications/DiffPilot.app/Contents/MacOS/dip ~/.local/bin/dip</code></p><p>See <a href="docs.html#install-cli" style="text-decoration:underline">Install the command line tool</a> for other options.</p></div></details>
     <details><summary class="title-3">Can I use it as git difftool and git mergetool?</summary><div class="a body-6"><p>Yes. Add the config shown in the <a href="docs.html#git-difftool" style="text-decoration:underline">Git tools guide</a>. The mergetool writes the merged file and tells Git whether you finished, so <code>trustExitCode</code> works.</p></div></details>

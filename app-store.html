@@ -115,7 +115,7 @@ Requires Git. Pull request features use the GitHub CLI. Agent features need a su
 • Light and dark themes in 15 languages</div></div>
 
     <h2 id="screens" class="heading-4">Screenshots</h2>
-    <p>Nine Mac screenshots at 2880 × 1800, an accepted App Store size for Mac. Upload them in this order. Click a screenshot to download the PNG.</p>
+    <p>Ten Mac screenshots at 2880 × 1800, an accepted App Store size for Mac. Upload them in this order. Click a screenshot to download the PNG.</p>
     <div class="shots">
       <a href="assets/app-store/01-agent-review.png" download><img loading="lazy" src="assets/app-store/01-agent-review-thumb.jpg" width="800" height="500" alt="App Store screenshot: Agent drafts a review"><span class="caption-2">1. Agent drafts a review<span class="muted"> · 2880 × 1800 PNG</span></span></a>
       <a href="assets/app-store/02-ask-agent.png" download><img loading="lazy" src="assets/app-store/02-ask-agent-thumb.jpg" width="800" height="500" alt="App Store screenshot: Ask the agent about a change"><span class="caption-2">2. Ask the agent about a change<span class="muted"> · 2880 × 1800 PNG</span></span></a>
@@ -133,7 +133,7 @@ Requires Git. Pull request features use the GitHub CLI. Agent features need a su
     <h2 id="info" class="heading-4">App information</h2>
     <div class="table-wrap"><table><tbody>
         <tr><td>Bundle ID</td><td><code>com.diffpilot.dip</code></td></tr>
-        <tr><td>Version</td><td>0.1.0</td></tr>
+        <tr><td>Version</td><td>0.1.4</td></tr>
         <tr><td>Platform</td><td>macOS 11 or later, Apple silicon and Intel</td></tr>
         <tr><td>Primary category</td><td>Developer Tools</td></tr>
         <tr><td>Secondary category</td><td>Productivity</td></tr>
@@ -163,17 +163,14 @@ Requires Git. Pull request features use the GitHub CLI. Agent features need a su
     </tbody></table></div>
 
     <h2 id="review" class="heading-4">Notes for App Review</h2>
-    <div class="field"><div class="bar"><span class="title-4">Notes for App Review</span><span style="display:flex;gap:var(--s-100);align-items:center"><span class="count caption-4" data-limit="4000" data-for="f-review"></span><button class="copy" type="button" data-copy="f-review"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></span></div><div class="val body-6" id="f-review">DiffPilot is a developer tool that shows differences between files and Git revisions.
+    <div class="field"><div class="bar"><span class="title-4">Notes for App Review</span><span style="display:flex;gap:var(--s-100);align-items:center"><span class="count caption-4" data-limit="4000" data-for="f-review"></span><button class="copy" type="button" data-copy="f-review"><span class="i i-sm" style="--src:url(assets/icons/copy.svg)"></span><span class="label">Copy</span></button></span></div><div class="val body-6" id="f-review">DiffPilot is a developer tool that shows differences between files, folders and Git revisions, and lets you leave review comments on changed lines.
 
 No account or sign in is needed. To test without any setup:
 1. Open DiffPilot and skip the setup screens.
-2. Choose File &gt; Open Folder and pick any folder that is a Git repository with uncommitted changes. To make one in Terminal:
-   mkdir ~/dip-demo &amp;&amp; cd ~/dip-demo &amp;&amp; git init &amp;&amp; echo hello &gt; a.txt &amp;&amp; git add . &amp;&amp; git commit -m init &amp;&amp; echo world &gt;&gt; a.txt
-   Then open ~/dip-demo.
-   You can also drag any text file or folder onto the DiffPilot icon in the Dock.
+2. Drag a folder or a text file onto the DiffPilot icon in the Dock, or choose File &gt; Open Folder. The App Store build only reads files you pick this way.
 3. Click a line number to add a comment. Press R to mark a file reviewed.
 
-Pull request features need the free GitHub CLI (gh) signed in to a GitHub account. Agent features need a coding agent such as Claude Code installed separately. Both are optional and the app works fully without them.
+Git and pull request features run the git and gh command line tools that the user installs. Agent features run a coding agent such as Claude Code that the user installs and signs in to. All of these are optional. Inside the App Sandbox these tools may not start. The file and folder views in steps 2 and 3 do not need them.
 
 The app collects no data and makes no network requests of its own.</div></div>
 
@@ -182,8 +179,8 @@ The app collects no data and makes no network requests of its own.</div></div>
       <li>Create the app record in App Store Connect with bundle ID <code>com.diffpilot.dip</code>.</li>
       <li>Fill in the listing, URLs, category, age rating and privacy answers from this page.</li>
       <li>Build a universal binary, sign it with a Mac App Store distribution certificate, and upload it with Xcode or Transporter.</li>
-      <li>Confirm the build runs under the App Sandbox. DiffPilot starts <code>git</code>, <code>gh</code> and agents and reads repositories you choose, so test that these still work with the entitlements you request. If the sandbox blocks them, ship a notarized direct download from <a href="https://github.com/tzutalin/DiffPilot/releases">GitHub releases</a> as well.</li>
-      <li>Upload the nine screenshots in order.</li>
+      <li>Confirm the build runs under the App Sandbox. The sandbox stops DiffPilot from starting <code>git</code>, <code>gh</code> and agents, so the App Store build is a file and folder viewer first. Keep the notarized <a href="https://github.com/tzutalin/DiffPilot/releases">GitHub release</a> and Homebrew cask as the full Git edition, and keep the review notes above accurate about this.</li>
+      <li>Upload the ten screenshots in order.</li>
       <li>The site links to the App Store record <code>id6834689259</code>. Remove the "in App Store review" note on the home page once the app is live.</li>
       <li>Submit for review.</li>
     </ol>
